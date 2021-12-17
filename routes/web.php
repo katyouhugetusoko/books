@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+//どこにアクセスしても同じところに（Vueが連携しているwelcome.blade.php）にいく
+Route::get('/{any}', function () {
     return view('welcome');
-});
+})->where('any','.*');
